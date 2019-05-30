@@ -7,7 +7,7 @@ echo "ubuntu ALL = (root) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ubuntu
 
 ## apt install
 
-sudo apt install  git vim mtr asciinema python3-pip fish openssh-server  -y
+sudo apt install git vim mtr asciinema python3-pip fish openssh-server -y
 
 ## snap install
 
@@ -18,4 +18,3 @@ sudo snap install docker
 
 sudo groupadd docker
 sudo gpasswd -a ubuntu docker
-
