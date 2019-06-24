@@ -18,3 +18,6 @@ sudo gpasswd -a ubuntu docker
 ## ubuntu server install tasksel
 sudo apt install tasksel
 
+## ubuntu tasksel 類GUI 安裝工具包，可快速在 server 環境安裝桌面環境
+sudo apt install tasksel
+sudo tasksel
