@@ -14,15 +14,6 @@ sudo systemctl enable docker.service
 sudo groupadd docker
 sudo gpasswd -a ubuntu docker
 
-# get awscli-v2 from aws and unzip
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; mv awscliv2.zip ~ ; unzip ~/awscliv2.zip
-# install
-sudo ~/aws/install
-# show version
-aws --version
-# remove archive file
-rm -rf ~/aws
-
 # install kubectl
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 chmod +x ./kubectl
@@ -49,6 +40,15 @@ sudo npm install --global npm
 sudo npm install --global aws-cdk
 sudo npm install --global @aws-cdk/aws-ec2 @aws-cdk/aws-ecs @aws-cdk/aws-eks @aws-cdk/aws-iam @aws-cdk/aws-ecr
 
+# get awscli-v2 from aws and unzip
+cd ~ ; curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" unzip awscliv2.zip
+# install
+sudo ~/aws/install
+# show version
+aws --version
+# remove archive file
+rm -rf ~/aws
+
 # clean
 sudo apt autoremove --purge -y
 sudo apt autoclean
@@ -56,3 +56,4 @@ sudo sync
 
 # install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
