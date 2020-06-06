@@ -38,9 +38,9 @@ helm repo update
 # install & update npm , install aws-cdk
 sudo npm install --global npm
 sudo npm install --global aws-cdk
-sudo npm install --global @aws-cdk/aws-ec2 @aws-cdk/aws-ecs @aws-cdk/aws-eks @aws-cdk/aws-iam @aws-cdk/aws-ecr
+sudo npm install --global @aws-cdk/aws-iam @aws-cdk/aws-ec2 @aws-cdk/aws-ecs @aws-cdk/aws-ecr @aws-cdk/aws-eks
 
-# get awscli-v2 from aws and unzip
+# get awscli-v2
 cd ~ ; curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; unzip awscliv2.zip
 # install
 sudo ~/aws/install
