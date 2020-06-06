@@ -41,7 +41,7 @@ sudo npm install --global aws-cdk
 sudo npm install --global @aws-cdk/aws-ec2 @aws-cdk/aws-ecs @aws-cdk/aws-eks @aws-cdk/aws-iam @aws-cdk/aws-ecr
 
 # get awscli-v2 from aws and unzip
-cd ~ ; curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" unzip awscliv2.zip
+cd ~ ; curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; unzip awscliv2.zip
 # install
 sudo ~/aws/install
 # show version
