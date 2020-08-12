@@ -5,7 +5,11 @@
 
 sudo apt update
 sudo apt full-upgrade -y
-sudo apt install zip zsh git vim mtr npm whois asciinema python3-pip openssh-server net-tools docker.io docker-compose tasksel ntpdate -y
+sudo apt install \
+zip zsh git vim mtr npm whois asciinema python3-pip openssh-server net-tools docker.io docker-compose tasksel ntpdate glances bmon -y
+
+# install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # enable docker service
 sudo systemctl enable docker.service
@@ -30,15 +34,11 @@ curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bas
 helm version
 
 # install helm repository
-helm repo add bitnami https://charts.bitnami.com
-helm repo add elastic https://helm.elastic.co
 helm repo add stable https://kubernetes-charts.storage.googleapis.com
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo add elastic https://helm.elastic.co
+helm repo add eks https://aws.github.io/eks-charts
 helm repo update
-
-# install & update npm , install aws-cdk
-sudo npm install --global npm
-sudo npm install --global aws-cdk
-sudo npm install --global @aws-cdk/aws-iam @aws-cdk/aws-ec2 @aws-cdk/aws-ecs @aws-cdk/aws-ecr @aws-cdk/aws-eks
 
 # get awscli-v2
 cd ~ ; curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; unzip awscliv2.zip
@@ -46,14 +46,16 @@ cd ~ ; curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscl
 sudo ~/aws/install
 # show version
 aws --version
-# remove archive file
+# remove archived file
 rm -rf ~/aws
+
+# install npm & aws-cdk
+sudo npm install --global npm
+sudo npm install --global typescript
+sudo npm install --global aws-cdk
+# sudo npm install --global @aws-cdk/aws-iam @aws-cdk/aws-ec2 @aws-cdk/aws-ecs @aws-cdk/aws-ecr @aws-cdk/aws-eks
 
 # clean
 sudo apt autoremove --purge -y
 sudo apt autoclean
 sudo sync
-
-# install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
