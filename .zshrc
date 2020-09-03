@@ -30,7 +30,7 @@ ZSH_THEME="robbyrussell"
 DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=1
+export UPDATE_ZSH_DAYS=3
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
@@ -101,4 +101,5 @@ source $ZSH/oh-my-zsh.sh
 alias ll='ls -alFh'
 alias dockerrmf='docker rm -f $(docker ps -qa)'
 alias dockerrmi='docker rmi -f $(docker images -qa)'
+alias runbuilddiff='npm run build; cdk diff'
 

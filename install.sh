@@ -5,8 +5,21 @@
 
 sudo apt update
 sudo apt full-upgrade -y
-sudo apt install \
-zip zsh git vim mtr npm whois asciinema python3-pip openssh-server net-tools docker.io docker-compose tasksel ntpdate glances bmon -y
+
+# required 
+sudo apt install zsh zip git tasksel vim ntpdate mtr net-tools whois python3-pip openssh-server -y
+
+# dev
+sudo apt install npm docker.io docker-compose -y
+
+# monitor
+sudo apt install glances netdata bmon -y
+
+# bashtop, install path /home/ubuntu/.local/bin
+# pip3 install bpytop --upgrade
+
+# optional 
+sudo apt install asciinema -y
 
 # install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -40,14 +53,10 @@ helm repo add elastic https://helm.elastic.co
 helm repo add eks https://aws.github.io/eks-charts
 helm repo update
 
-# get awscli-v2
+# install awscli-v2
 cd ~ ; curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; unzip awscliv2.zip
-# install
-sudo ~/aws/install
-# show version
+sudo ~/aws/install ; rm -rf ~/aws
 aws --version
-# remove archived file
-rm -rf ~/aws
 
 # install npm & aws-cdk
 sudo npm install --global npm
