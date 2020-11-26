@@ -64,6 +64,10 @@ sudo npm install --global typescript
 sudo npm install --global aws-cdk
 # sudo npm install --global @aws-cdk/aws-iam @aws-cdk/aws-ec2 @aws-cdk/aws-ecs @aws-cdk/aws-ecr @aws-cdk/aws-eks
 
+# install aws ecs copilot
+sudo curl -Lo /usr/local/bin/copilot https://github.com/aws/copilot-cli/releases/latest/download/copilot-linux && sudo chmod +x /usr/local/bin/copilot && copilot -v
+
+
 # clean
 sudo apt autoremove --purge -y
 sudo apt autoclean
