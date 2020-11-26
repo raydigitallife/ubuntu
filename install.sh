@@ -47,7 +47,7 @@ curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bas
 helm version
 
 # install helm repository
-helm repo add stable https://kubernetes-charts.storage.googleapis.com
+helm repo add stable https://charts.helm.sh/stable
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo add elastic https://helm.elastic.co
 helm repo add eks https://aws.github.io/eks-charts
